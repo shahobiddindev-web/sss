@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CYBERUZ | CS2 va CS 1.6 Server Obunalari va VIP Xizmatlar - 50% Chegirma</title>
+  <meta name="description" content="Counter-Strike 2 va CS 1.6 serverlariga VIP, Premium, Admin va Ultimate obunalarni 50% chegirma bilan sotib oling. Payme, Click, Uzum va Karta orqali avtomatik to'lov.">
+  
+  <!-- Google Fonts: Orbitron, Rajdhani, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@700;800;900&family=Rajdhani:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Asosiy Stillar -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       YUQORI 50% CHEGIRMA BANNERI
+       ========================================================================== -->
+  <div class="discount-top-banner">
+    <div class="container">
+      <div class="banner-content">
+        <span class="fire-badge">🔥 AKSIYA</span>
+        <span>YANGI MAVSUM OCHILISHI: Barcha CS2 va CS 1.6 obunalariga <strong>50% CHEGIRMA!</strong></span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <div class="banner-timer-wrap">
+          <span style="font-size: 0.8rem; text-transform: uppercase; color: #fff;">Tugashiga:</span>
+          <span id="banner-timer" class="banner-timer">03:42:19</span>
+        </div>
+        <button id="banner-claim-btn" class="banner-btn">Chegirmani Olish</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       ASOSIY HEADER & NAVIGATSIYA
+       ========================================================================== -->
+  <header class="main-header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="#hero" class="logo-area">
+          <div class="logo-icon-box">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#ffffff">
+              <path d="M12 2c1.1 0 2 .9 2 2v1.1c3.5.7 6.2 3.5 6.9 7H22c1.1 0 2 .9 2 2s-.9 2-2 2h-1.1c-.7 3.5-3.5 6.2-7 6.9V22c0 1.1-.9 2-2 2s-2-.9-2-2v-1.1c-3.5-.7-6.2-3.5-6.9-7H2c-1.1 0-2-.9-2-2s.9-2 2-2h1.1c.7-3.5 3.5-6.2 7-6.9V4c0-1.1.9-2 2-2zm0 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 4c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
+            </svg>
+          </div>
+          <div class="logo-text-box">
+            <span class="logo-brand">CYBERUZ</span>
+            <span class="logo-sub">CS2 & 1.6 DONAT MARKET</span>
+          </div>
+        </a>
+
+        <!-- Menyu havolalari -->
+        <nav class="main-nav">
+          <a href="#tariffs-section" class="nav-link active">Obunalar</a>
+          <a href="#comparison-section" class="nav-link">Imtiyozlar</a>
+          <a href="#servers-section" class="nav-link">Serverlar</a>
+          <a href="#how-it-works" class="nav-link">Qo'llanma</a>
+          <a href="#faq-section" class="nav-link">Savol-Javob</a>
+        </nav>
+
+        <!-- Tugmalar -->
+        <div class="header-actions">
+          <button id="btn-toggle-sound" class="btn-sound" title="Ovoz effektlari" aria-label="Ovoz">🔊</button>
+          
+          <div class="btn-status-pill">
+            <span class="status-dot"></span>
+            <span>12 SERVER ONLAYN</span>
+          </div>
+
+          <a href="https://t.me/cyberuz_admin" target="_blank" rel="noopener noreferrer" class="btn-telegram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .36z"/>
+            </svg>
+            Telegram Yordam
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION (ASOSIY SAHIFA)
+       ========================================================================== -->
+  <section id="hero" class="hero-section">
+    <!-- Olov uchqunlari animatsiyasi kanvasi -->
+    <canvas id="canvas-fire-sparks"></canvas>
+
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text-block">
+          <div class="hero-tag">
+            <span>🔥 RASMIY SERVERLAR</span> &bull; 50% CHEGIRMA BILAN
+          </div>
+          <h1 class="hero-title">
+            CS2 VA CS 1.6 <br>
+            <span class="text-orange">SERVERLARIDA</span> <br>
+            <span class="text-red">HUKMRONLIK</span> QIL!
+          </h1>
+          <p class="hero-desc">
+            VIP, Premium, Admin va Ultimate huquqlarini darhol xarid qiling. Har bir raundda maxsus qurollar, ikki marta sakrash (Double Jump), vampirizm va to'liq boshqaruv imkoniyatlariga ega bo'ling.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#tariffs-section" class="btn-primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              OBUNALARNI KO'RISH (-50%)
+            </a>
+            <a href="#servers-section" class="btn-outline">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+              SERVERLARGA ULASH
+            </a>
+          </div>
+
+          <div class="hero-stats-row">
+            <div class="stat-item">
+              <span class="stat-num">12<span>+</span></span>
+              <span class="stat-lbl">Faol Serverlar</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">1 450<span>+</span></span>
+              <span class="stat-lbl">VIP O'yinchilar</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">30<span>soniya</span></span>
+              <span class="stat-lbl">Avtomatik Berish</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">99.9<span>%</span></span>
+              <span class="stat-lbl">Uptime Barqaror</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero O'ng Tomon / Tezkor Serverlar Bloki -->
+        <div class="hero-visual">
+          <div class="hero-card-glow">
+            <div class="card-top-header">
+              <div>
+                <span style="font-size: 0.8rem; color: var(--orange-light); text-transform: uppercase; font-family: var(--font-heading); font-weight: 700; letter-spacing: 1px;">ONLAYN STATUS</span>
+                <h3 style="font-size: 1.25rem; color: #fff;">TOP SERVERLAR</h3>
+              </div>
+              <div class="badge-50-big">-50% OFF</div>
+            </div>
+
+            <div class="hero-live-servers">
+              <!-- CS2 Server -->
+              <div class="server-quick-row">
+                <div class="sq-info">
+                  <div class="game-icon-tag" style="color: #ff6a00; border-color: rgba(255,106,0,0.4);">CS2</div>
+                  <div>
+                    <div class="sq-name">[CYBERUZ] PUBLIC #1</div>
+                    <div class="sq-sub">de_mirage &bull; 28/32 O'yinchi</div>
+                  </div>
+                </div>
+                <button class="btn-copy-ip-sm btn-copy-ip-hero" data-ip="cs2.cyberuz.uz:27015">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Nusxa
+                </button>
+              </div>
+
+              <!-- CS2 Dust2 -->
+              <div class="server-quick-row">
+                <div class="sq-info">
+                  <div class="game-icon-tag" style="color: #ffaa00; border-color: rgba(255,170,0,0.4);">CS2</div>
+                  <div>
+                    <div class="sq-name">[CYBERUZ] DUST2 24/7</div>
+                    <div class="sq-sub">de_dust2 &bull; 31/32 O'yinchi</div>
+                  </div>
+                </div>
+                <button class="btn-copy-ip-sm btn-copy-ip-hero" data-ip="cs2.cyberuz.uz:27016">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Nusxa
+                </button>
+              </div>
+
+              <!-- CS 1.6 Classic -->
+              <div class="server-quick-row">
+                <div class="sq-info">
+                  <div class="game-icon-tag" style="color: #ff2233; border-color: rgba(255,34,51,0.4);">1.6</div>
+                  <div>
+                    <div class="sq-name">[CYBERUZ] CLASSIC 1.6</div>
+                    <div class="sq-sub">de_dust2 &bull; 32/32 O'yinchi</div>
+                  </div>
+                </div>
+                <button class="btn-copy-ip-sm btn-copy-ip-hero" data-ip="cs16.cyberuz.uz:27015">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  Nusxa
+                </button>
+              </div>
+            </div>
+
+            <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem;">
+              <span style="color: var(--text-secondary);">To'lov usullari:</span>
+              <span style="font-weight: 700; color: #fff;">Payme, Click, Uzum, Humo/Uzcard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TARIFLAR VA OBUNALAR BO'LIMI (PRICING SECTION)
+       ========================================================================== -->
+  <section id="tariffs-section" class="pricing-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">MAXSUS TAKLIF &bull; 50% ARZONROQ</span>
+        <h2 class="section-title">SERVER OBUNALARINI TANLANG</h2>
+        <p class="section-subtitle">O'zingizga mos tarifni tanlang, chegirmadan foydalaning va bir necha soniyada serverda VIP imkoniyatlarni qo'lga kiriting!</p>
+      </div>
+
+      <!-- O'yin almashish tugmalari -->
+      <div class="game-tabs-container">
+        <div class="game-tabs-pill">
+          <button id="tab-game-cs2" class="game-tab-btn active">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5zm4 4h-2v-2h2v2zm0-4h-2V7h2v5z"/>
+            </svg>
+            COUNTER-STRIKE 2
+            <span class="tab-badge">-50%</span>
+          </button>
+          
+          <button id="tab-game-cs16" class="game-tab-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            COUNTER-STRIKE 1.6
+            <span class="tab-badge">-50%</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Server filter va Chegirma indikatori -->
+      <div class="server-filter-bar">
+        <div class="server-select-wrap">
+          <label for="select-server-filter">Qaysi server uchun:</label>
+          <select id="select-server-filter" class="custom-select">
+            <option value="cs2_all">CS2: Barcha Serverlar (Global Obuna)</option>
+            <option value="cs2_pub1">CS2: Public Competitive #1</option>
+            <option value="cs2_dust2">CS2: Dust2 Only 24/7</option>
+            <option value="cs2_awp">CS2: AWP & Retake</option>
+            <option value="cs16_all">CS 1.6: Barcha Serverlar (Global Obuna)</option>
+            <option value="cs16_pub1">CS 1.6: Classic Public #1</option>
+            <option value="cs16_csdm">CS 1.6: CSDM + Vampirizm</option>
+            <option value="cs16_gg">CS 1.6: GunGame Turbo</option>
+          </select>
+        </div>
+
+        <div class="discount-active-indicator">
+          <span>🔥</span>
+          <span>50% Chegirma avtomatik qo'llanilgan!</span>
+        </div>
+      </div>
+
+      <!-- Dinamik Tariflar Kartalari Grid -->
+      <div id="pricing-cards-container" class="pricing-grid">
+        <!-- JavaScript orqali to'ldiriladi -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       IMTIYOZLAR QIYOSIY JADVALI (COMPARISON TABLE)
+       ========================================================================== -->
+  <section id="comparison-section" class="comparison-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">TAQQOSLASH</span>
+        <h2 class="section-title">IMTIYOZLAR TAQQOSLASH JADVALI</h2>
+        <p class="section-subtitle">VIP, Premium, Admin va Ultimate darajalarining to'liq imkoniyatlari bilan tanishing.</p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Imkoniyatlar va Imtiyozlar</th>
+              <th>VIP</th>
+              <th>PREMIUM (VIP+)</th>
+              <th>ADMIN</th>
+              <th>ULTIMATE (BOSS)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bepul Kevlar, Helmet va Granatalar</td>
+              <td><span class="icon-check">✔</span></td>
+              <td><span class="icon-check">✔</span></td>
+              <td><span class="icon-check">✔</span></td>
+              <td><span class="icon-check">✔</span></td>
+            </tr>
+            <tr>
+              <td>Har bir dushmanni o'ldirganda qo'shimcha HP</td>
+              <td>+15 HP</td>
+              <td>+25 HP (Vampirizm)</td>
+              <td>+25 HP</td>
+              <td>+35 HP (Maksimal)</td>
+            </tr>
+            <tr>
+              <td>Maxsus qurol va pichoq skinlari</td>
+              <td>Asosiy to'plam</td>
+              <td>Kengaytirilgan</td>
+              <td>Barcha skinlar</td>
+              <td>Barcha Oltin skinlar</td>
+            </tr>
+            <tr>
+              <td>Double Jump (Havoda 2 marta sakrash)</td>
+              <td><span class="icon-cross">✖</span></td>
+              <td><span class="icon-check">✔</span></td>
+              <td><span class="icon-check">✔</span></td>
+              <td><span class="icon-check">✔</span></td>
+            </tr>
+            <tr>
+              <td>Reserv Slot (Server 100% to'lganda kirish)</td>
+              <td><span class="icon-cross">✖</span></td>
+              <td><span class="icon-check">✔</span></td>
+              <td><span class="icon-check">✔</span></td>
+              <td><span class="icon-check">✔</span></td>
+            </tr>
+            <tr>
+              <td>O'yinchi atrofida Neon Aura effekti</td>
+              <td><span class="icon-cross">✖</span></td>
+              <td><span class="icon-check">✔</span></td>
+              <td><span class="icon-check">✔</span></td>
+              <td><span class="icon-check">✔</span></td>
+            </tr>
+            <tr>
+              <td>Admin boshqaruv menyusi (/adminmenu)</td>
+              <td><span class="icon-cross">✖</span></td>
+              <td><span class="icon-cross">✖</span></td>
+              <td><span class="icon-check">✔</span></td>
+              <td><span class="icon-check">✔</span></td>
+            </tr>
+            <tr>
+              <td>Qoidabuzarlarni jazolash (Kick / Ban / Gag)</td>
+              <td><span class="icon-cross">✖</span></td>
+              <td><span class="icon-cross">✖</span></td>
+              <td><span class="icon-check">✔</span></td>
+              <td><span class="icon-check">✔</span></td>
+            </tr>
+            <tr>
+              <td>Xaritalarni almashtirish (Votemap)</td>
+              <td><span class="icon-cross">✖</span></td>
+              <td><span class="icon-cross">✖</span></td>
+              <td><span class="icon-check">✔</span></td>
+              <td><span class="icon-check">✔</span></td>
+            </tr>
+            <tr>
+              <td>Cheksiz Immunitet (Jazolab bo'lmaydi)</td>
+              <td><span class="icon-cross">✖</span></td>
+              <td><span class="icon-cross">✖</span></td>
+              <td><span class="icon-cross">✖</span></td>
+              <td><span class="icon-check">✔</span> (100% Himoya)</td>
+            </tr>
+            <tr>
+              <td>Ixtiyoriy shaxsiy prefiks va rang</td>
+              <td>Oddiy</td>
+              <td>[PREMIUM]</td>
+              <td>[ADMIN]</td>
+              <td>Ixtiyoriy matn va rang</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SERVERLAR MONITORI (SERVERS STATUS)
+       ========================================================================== -->
+  <section id="servers-section" class="servers-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">24/7 ONLAYN</span>
+        <h2 class="section-title">SERVERLAR STATUSI VA IP MANZILLAR</h2>
+        <p class="section-subtitle">Serverlarimiz Toshkent shahrida eng kuchli xostingda joylashgan bo'lib, minimal ping va maksimal fps ta'minlaydi.</p>
+      </div>
+
+      <div id="servers-list-container" class="servers-grid">
+        <!-- JavaScript orqali to'ldiriladi -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       QANDAY FAOLLASHTIRISH (HOW IT WORKS)
+       ========================================================================== -->
+  <section id="how-it-works" class="how-it-works">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">3 ODDIY QADAM</span>
+        <h2 class="section-title">OBUNANI QANDAY FAOLLASHTIRISH MUMKIN?</h2>
+        <p class="section-subtitle">To'lovdan so'ng imtiyozlaringiz avtomatik tarzda serverga biriktiriladi.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-icon">🎯</div>
+          <h3 class="step-title">Tarifni Tanlang</h3>
+          <p class="step-desc">CS2 yoki CS 1.6 o'yinini, o'zingizga ma'qul VIP yoki Admin darajasini va muddatni tanlang (50% chegirma allaqachon hisoblangan).</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-icon">💳</div>
+          <h3 class="step-title">Qulay Usulda To'lang</h3>
+          <p class="step-desc">Payme, Click, Uzum Bank yoki Uzcard/Humo kartangiz orqali xavfsiz to'lovni amalga oshiring. Komissiya 0%!</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <div class="step-icon">⚡</div>
+          <h3 class="step-title">Serverda Rohatlaning</h3>
+          <p class="step-desc">To'lov tugashi bilan konsolga o'z parolingizni yoki buyruqni kiriting va darhol to'liq huquqlarga ega bo'ling!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FAQ & SAVOL-JAVOBLAR (FAQ SECTION)
+       ========================================================================== -->
+  <section id="faq-section" class="faq-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-tag">SAVOLLAR BO'LGANMI?</span>
+        <h2 class="section-title">TEZ-TEZ SO'RALADIGAN SAVOLLAR</h2>
+        <p class="section-subtitle">Obunalar, to'lovlar va server qoidalari bo'yicha eng muhim ma'lumotlar.</p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>To'lovdan so'ng obuna qancha vaqtda faollashadi?</span>
+            <span class="faq-icon-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            To'lov amalga oshirilishi bilan tizim avtomatik ravishda buyurtmangizni server bazasiga yozadi. Odatda faollashuv vaqti 30 soniyadan oshmaydi. Agar o'yinda bo'lsangiz, serverdan chiqib qayta kirsangiz kifoya.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>CS 1.6 serverida parolni qanday kiritish kerak?</span>
+            <span class="faq-icon-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            CS 1.6 o'yinida klaviaturadagi `~` (yoki `ё`) tugmasi orqali konsolni ochasiz va quyidagi buyruqni yozasiz: <code>setinfo _pw "sizning_parolingiz"</code>. Shundan so'ng bemalol serverga ulanishingiz mumkin.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>50% chegirma aksiyasi qachongacha davom etadi?</span>
+            <span class="faq-icon-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            50% maxsus chegirma yangi mavsum boshlanishi munosabati bilan faqat bugun amal qiladi. Sahifa yuqorisidagi taymer tugashi bilan narxlar standart holatiga qaytadi, shuning uchun hoziroq foydalanishni tavsiya etamiz!
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Qaysi to'lov tizimlari orqali to'lash mumkin?</span>
+            <span class="faq-icon-arrow">▼</span>
+          </button>
+          <div class="faq-answer">
+            Biz Payme, Click, Uzum Bank, Uzcard, Humo hamda xalqaro Visa/Mastercard kartalarini qabul qilamiz. Shuningdek, to'lovni to'g'ridan-to'g'ri Telegram adminimiz orqali ham kelishishingiz mumkin.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CHECKOUT & TO'LOV MODALI (PAYMENT MODAL)
+       ========================================================================== -->
+  <div id="checkout-modal-overlay" class="modal-overlay">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title">
+          <span>💳</span>
+          <span>OBUNANI RASMIYLASHTIRISH</span>
+        </h3>
+        <button id="btn-close-checkout-modal" class="modal-close-btn" aria-label="Yopish">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- 1-QADAM: FORM VA TO'LOV MA'LUMOTLARI -->
+        <div id="checkout-form-step">
+          <!-- Tanlangan tarif qisqacha ma'lumoti -->
+          <div class="checkout-summary-box">
+            <div class="csb-info">
+              <h4 id="modal-checkout-tier">PREMIUM (VIP+)</h4>
+              <p><span id="modal-checkout-game">Counter-Strike 2</span> &bull; <span id="modal-checkout-duration">30 kun</span></p>
+            </div>
+            <div class="csb-price">
+              <div id="modal-checkout-old-price" class="csb-old">80 000 so'm</div>
+              <div id="modal-checkout-final-price" class="csb-current">40 000 so'm</div>
+            </div>
+          </div>
+
+          <form id="checkout-form" onsubmit="event.preventDefault();">
+            <!-- O'yinchi Niki yoki Steam ID -->
+            <div class="form-group">
+              <label id="label-nickname" class="form-label" for="input-player-nick">
+                O'yinchi niki yoki Steam ID <span>*</span>
+              </label>
+              <input type="text" id="input-player-nick" class="form-input" placeholder="Masalan: Player_UZ yoki STEAM_0:1:..." required>
+              <p class="form-helper">Serverga kiradigan aniq nikingizni yoki SteamID raqamingizni yozing.</p>
+            </div>
+
+            <!-- Parol (CS 1.6 uchun talab qilinadi) -->
+            <div id="field-password-group" class="form-group" style="display: none;">
+              <label class="form-label" for="input-player-password">
+                Xavfsizlik Paroli (_pw) <span>*</span>
+              </label>
+              <input type="password" id="input-player-password" class="form-input" placeholder="Serverga kirish paroli">
+              <p class="form-helper">Boshqa o'yinchilar sizning imtiyoziy nikingiz bilan kira olmasligi uchun parol.</p>
+            </div>
+
+            <!-- Telegram / Telefon -->
+            <div class="form-group">
+              <label class="form-label" for="input-player-contact">
+                Telegram @username yoki Telefon raqam
+              </label>
+              <input type="text" id="input-player-contact" class="form-input" placeholder="+998 90 123 45 67 yoki @telegram_nik">
+              <p class="form-helper">Chek va ma'lumotlarni yuborish uchun aloqa vositasi.</p>
+            </div>
+
+            <!-- To'lov usullari tanlovi -->
+            <div class="form-group">
+              <label class="form-label">To'lov Usulini Tanlang <span>*</span></label>
+              <div class="payment-methods-grid">
+                <div class="payment-method-card active" data-method="payme">
+                  <div class="pm-logo payme">Payme</div>
+                  <div class="pm-label">0% Komissiya</div>
+                </div>
+                <div class="payment-method-card" data-method="click">
+                  <div class="pm-logo click">Click</div>
+                  <div class="pm-label">Tezkor to'lov</div>
+                </div>
+                <div class="payment-method-card" data-method="uzum">
+                  <div class="pm-logo uzum">Uzum Bank</div>
+                  <div class="pm-label">Bank orqali</div>
+                </div>
+                <div class="payment-method-card" data-method="uzcard">
+                  <div class="pm-logo card">Uzcard/Humo</div>
+                  <div class="pm-label">Bank kartasi</div>
+                </div>
+                <div class="payment-method-card" data-method="visa">
+                  <div class="pm-logo card">Visa/MC</div>
+                  <div class="pm-label">Xalqaro karta</div>
+                </div>
+                <div class="payment-method-card" data-method="tg">
+                  <div class="pm-logo tg">Telegram</div>
+                  <div class="pm-label">Admin orqali</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Karta ma'lumotlari kiritish bloki -->
+            <div class="card-details-box">
+              <div class="form-group" style="margin-bottom: 10px;">
+                <label class="form-label" for="input-card-number">Karta raqami</label>
+                <input type="text" id="input-card-number" class="form-input" placeholder="8600 •••• •••• ••••" maxlength="19">
+              </div>
+              <div class="card-row-split">
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-label" for="input-card-exp">Amal qilish muddati</label>
+                  <input type="text" id="input-card-exp" class="form-input" placeholder="OO/YY" maxlength="5">
+                </div>
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-label" for="input-card-cvv">CVV/Kod</label>
+                  <input type="password" id="input-card-cvv" class="form-input" placeholder="•••" maxlength="3">
+                </div>
+              </div>
+            </div>
+
+            <!-- To'lash tugmasi -->
+            <button type="button" id="btn-submit-payment" class="btn-submit-pay">
+              <span>TO'LASH:</span>
+              <span id="btn-pay-amount">40 000 so'm</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- 2-QADAM: TO'LOV MUVAFFAQIYATLI BO'LGAN HOLAT (SUCCESS RECEIPT) -->
+        <div id="checkout-success-step" class="payment-success-screen" style="display: none;">
+          <div class="success-badge-icon">✔</div>
+          <h3 class="success-title">TO'LOV MUVAFFAQIYATLI AMALGA OSHIRILDI!</h3>
+          <p class="success-desc">Obunangiz muvaffaqiyatli faollashtirildi. Chek ma'lumotlari bilan tanishing.</p>
+
+          <div class="receipt-card">
+            <div class="receipt-row">
+              <span style="color: var(--text-secondary);">Buyurtma ID:</span>
+              <strong id="res-order-id" style="color: var(--orange-light); font-family: monospace;">CYB-829143</strong>
+            </div>
+            <div class="receipt-row">
+              <span style="color: var(--text-secondary);">Sana va Vaqt:</span>
+              <span id="res-date">16.10.2026 20:15</span>
+            </div>
+            <div class="receipt-row">
+              <span style="color: var(--text-secondary);">Tarif:</span>
+              <strong id="res-tier" style="color: #ffffff;">CS2 - PREMIUM (VIP+)</strong>
+            </div>
+            <div class="receipt-row">
+              <span style="color: var(--text-secondary);">O'yinchi Niki:</span>
+              <span id="res-nick" style="color: #ffffff; font-weight: 700;">Player_UZ</span>
+            </div>
+            <div class="receipt-row">
+              <span style="color: var(--text-secondary);">To'langan summa (50% chegirmada):</span>
+              <strong id="res-amount" style="color: #10b981; font-size: 1.1rem;">40 000 so'm</strong>
+            </div>
+          </div>
+
+          <!-- Konsol orqali faollashtirish buyrug'i -->
+          <div class="console-command-box">
+            <div id="console-instruction-text" class="cc-label">Konsol buyrug'i:</div>
+            <div class="cc-code">
+              <span id="console-activation-command">setinfo _pw "parol123"</span>
+              <button id="btn-copy-console-cmd" class="btn-copy-ip-sm">Nusxalash</button>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px;">
+            <a id="btn-tg-receipt" href="https://t.me/cyberuz_admin" target="_blank" rel="noopener noreferrer" class="btn-primary" style="flex: 1; text-align: center; justify-content: center;">
+              Telegram Adminga Yuborish
+            </a>
+            <button type="button" onclick="closeCheckoutModal()" class="btn-outline" style="flex: 1;">
+              Yopish
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       50% CHEGIRMA POPUP MODALI (WELCOME MODAL)
+       ========================================================================== -->
+  <div id="welcome-discount-modal-overlay" class="modal-overlay">
+    <div class="modal-container welcome-discount-modal">
+      <div class="wdm-icon-box">🔥</div>
+      <h3 class="wdm-title">MAXSUS TAKLIF: 50% CHEGIRMA!</h3>
+      <p class="wdm-desc">
+        Saytga tashrif buyurganingiz munosabati bilan barcha CS2 va CS 1.6 serverlaridagi VIP, Admin va Ultimate obunalarga <strong>50% chegirma</strong> taqdim etiladi!
+      </p>
+
+      <div class="wdm-timer">
+        <div class="wdm-timer-unit">
+          <span id="popup-timer-hours" class="num">03</span>
+          <span class="lbl">Soat</span>
+        </div>
+        <div class="wdm-timer-unit">
+          <span id="popup-timer-mins" class="num">42</span>
+          <span class="lbl">Daqiqa</span>
+        </div>
+        <div class="wdm-timer-unit">
+          <span id="popup-timer-secs" class="num">19</span>
+          <span class="lbl">Soniya</span>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <button id="btn-claim-discount" class="btn-primary" style="justify-content: center; width: 100%;">
+          CHEGIRMANI FAOLLASHTIRISH (-50%)
+        </button>
+        <button id="btn-close-welcome-modal" class="btn-outline" style="justify-content: center; width: 100%;">
+          Keyinroq ko'rish
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       LIVE XARID NOTIFIKATSIYASI TOAST (BOTTOM-LEFT)
+       ========================================================================== -->
+  <div id="recent-purchase-toast" class="purchase-notification-toast">
+    <div class="toast-avatar">⚡</div>
+    <div class="toast-content">
+      <p><strong id="toast-buyer-name">Jasur_Pro</strong> hozirgina xarid qildi!</p>
+      <span id="toast-purchase-details">CS2 [PREMIUM (VIP+)] - 50% Chegirma</span>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FOOTER (QUYI QISM)
+       ========================================================================== -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo-area" style="margin-bottom: 8px;">
+            <div class="logo-icon-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="#ffffff">
+                <path d="M12 2c1.1 0 2 .9 2 2v1.1c3.5.7 6.2 3.5 6.9 7H22c1.1 0 2 .9 2 2s-.9 2-2 2h-1.1c-.7 3.5-3.5 6.2-7 6.9V22c0 1.1-.9 2-2 2s-2-.9-2-2v-1.1c-3.5-.7-6.2-3.5-6.9-7H2c-1.1 0-2-.9-2-2s.9-2 2-2h1.1c.7-3.5 3.5-6.2 7-6.9V4c0-1.1.9-2 2-2zm0 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 4c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/>
+              </svg>
+            </div>
+            <span class="logo-brand">CYBERUZ</span>
+          </div>
+          <p class="footer-brand-desc">
+            O'zbekistondagi eng mashhur Counter-Strike 2 va CS 1.6 o'yin serverlari tarmog'i. Yuqori tezlik, past ping va adolatli o'yin muhiti.
+          </p>
+          <div class="payment-gateways-icons">
+            <span class="gateway-badge" style="color: #00cccc;">Payme</span>
+            <span class="gateway-badge" style="color: #0088cc;">Click</span>
+            <span class="gateway-badge" style="color: #7f00ff;">Uzum</span>
+            <span class="gateway-badge" style="color: #ff9900;">Uzcard / Humo</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">O'yin Tariflari</h4>
+          <ul class="footer-links">
+            <li><a href="#tariffs-section">CS2 VIP Obuna</a></li>
+            <li><a href="#tariffs-section">CS2 Premium (VIP+)</a></li>
+            <li><a href="#tariffs-section">CS 1.6 Classic VIP</a></li>
+            <li><a href="#tariffs-section">CS 1.6 Administrator</a></li>
+            <li><a href="#tariffs-section">Ultimate Bosslik Huquqi</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Tezkor Havolalar</h4>
+          <ul class="footer-links">
+            <li><a href="#servers-section">Serverlar Onlayn Ro'yxati</a></li>
+            <li><a href="#comparison-section">Imtiyozlar Jadvali</a></li>
+            <li><a href="#how-it-works">Faollashtirish Qo'llanmasi</a></li>
+            <li><a href="#faq-section">Ko'p Beriladigan Savollar</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Bog'lanish & Ko'mak</h4>
+          <ul class="footer-links">
+            <li><a href="https://t.me/cyberuz_admin" target="_blank" rel="noopener noreferrer">Telegram: @cyberuz_admin</a></li>
+            <li><a href="https://t.me/cyberuz_group" target="_blank" rel="noopener noreferrer">Telegram Kanal: @cyberuz_cs</a></li>
+            <li><span style="color: var(--text-secondary); font-size: 0.9rem;">Texnik yordam: 24/7 onlayn</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 CYBERUZ. Barcha huquqlar himoyalangan. Counter-Strike Valve Corporation savdo belgisidir.</div>
+        <div style="color: var(--orange-light);">Designed for gamers with 🔥 flame & passion</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Asosiy JavaScript Fayl -->
+  <script src="js/app.js"></script>
+</body>
+</html>
